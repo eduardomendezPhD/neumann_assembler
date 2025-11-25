@@ -1,0 +1,58 @@
+; LISTING FILE
+; Source: factorialB.asm
+; Generated: 2025-11-24 21:32:29
+; Memory used: 0xC8 bytes (0..0xC7)
+
+ADDR  BYTES      SOURCE
+====  =====     ========= 
+                 .org 0x00
+0000  01 C5     LOAD  ONE
+0002  03 C1     STORE RESULT
+0004  01 C0     LOAD  N
+0006  03 C2     STORE COUNTER
+0008  01 C2     LOAD  COUNTER
+000A  05 32     JZ    END
+000C  01 C6     LOAD  ZERO
+000E  03 C4     STORE PART
+0010  01 C2     LOAD  COUNTER
+0012  03 C3     STORE TEMP
+0014  01 C4     LOAD  PART
+0016  02 C1     ADD   RESULT
+0018  03 C4     STORE PART
+001A  01 C3     LOAD  TEMP
+001C  02 C7     ADD   NEG1
+001E  03 C3     STORE TEMP
+0020  01 C3     LOAD  TEMP
+0022  05 26     JZ    INNER_END
+0024  04 14     JMP   INNER
+0026  01 C4     LOAD  PART
+0028  03 C1     STORE RESULT
+002A  01 C2     LOAD  COUNTER
+002C  02 C7     ADD   NEG1
+002E  03 C2     STORE COUNTER
+0030  04 08     JMP   LOOP
+0032  01 C1     LOAD  RESULT
+0034  FF         HALT
+                 .org 0xC0
+00C0  04         .byte 4
+00C1  00         .byte 0
+00C2  00         .byte 0
+00C3  00         .byte 0
+00C4  00         .byte 0
+00C5  01         .byte 1
+00C6  00         .byte 0
+00C7  FF         .byte 255
+
+SYMBOLS (12):
+  COUNTER              = 0xC2 (194)
+  END                  = 0x32 ( 50)
+  INNER                = 0x14 ( 20)
+  INNER_END            = 0x26 ( 38)
+  LOOP                 = 0x08 (  8)
+  N                    = 0xC0 (192)
+  NEG1                 = 0xC7 (199)
+  ONE                  = 0xC5 (197)
+  PART                 = 0xC4 (196)
+  RESULT               = 0xC1 (193)
+  TEMP                 = 0xC3 (195)
+  ZERO                 = 0xC6 (198)

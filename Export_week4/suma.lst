@@ -1,0 +1,21 @@
+; LISTING FILE
+; Source: sumaIN.asm
+; Generated: 2025-11-24 21:24:12
+; Memory used: 0x23 bytes (0..0x22)
+
+ADDR  BYTES      SOURCE
+====  =====     ========= 
+                 .org 0x00
+0000  01 20     LOAD  A
+0002  02 21     ADD   B
+0004  03 22     STORE RES
+0006  FF         HALT
+                 .org 0x20
+0020  00         .byte 0
+0021  00         .byte 0
+0022  00         .byte 0
+
+SYMBOLS (3):
+  A                    = 0x20 ( 32)
+  B                    = 0x21 ( 33)
+  RES                  = 0x22 ( 34)
